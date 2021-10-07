@@ -12,6 +12,11 @@ example and uses the values that were input into the function:
 */
 
 export function sum(a, b) {
+    const num = a + b;
+    const str = `The sum of ${ a } and ${b} is ${num}.`;
+    
+
+    return [num, str]; 
 
 }
 
