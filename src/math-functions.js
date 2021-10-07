@@ -88,7 +88,9 @@ to use the + operator for string concatenation.
 
 export function sumArrayWithThreeNumbers(sumArr) {
     const sum1 = sum(sumArr[0], sumArr[1])[0];
+
     const sum2 = sum(sum1, sumArr[2])[0];
+
     const str1 = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sum2} is their sum.`;
     return [sum2, str1]; 
 }
@@ -117,7 +119,7 @@ export function multiplyArrayWithThreeNumbers(multArr) {
     const mult2 = multiply(mult1, multArr[2])[0];
     const str1 = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${mult2}.`;
 
-    return [mult2, str1] 
+    return [mult2, str1];
 
 }
 
@@ -129,16 +131,33 @@ export function multiplyArrayWithThreeNumbers(multArr) {
 
 /////////////////////////////////////
 /* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyAnyArray() that takes an array of numbers of any length as
+its argument and returns an array whose first element is the product of those numbers,
+and the second element is a string that EXACTLY follows this example and 
+concatenates a message using the arguments that were passed into the function:
 
 "The numbers 1,2,3,4,5 have a product of 120."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function.
+ To do multiplication, use your multiply() function that you've already created. 
+ You're going to have to be resourceful to figure out how to do this. However, 
+ you may continue to use the + operator for string concatenation.
 
 This function should be dynamic, accepting an array of any length.
+
 */
 
 export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+
+    let i = 1;
+    for(let x of dynamicArray) {
+        i = multiply(x, i)[0];
+        // console.log(x);
+        console.log(dynamicArray);
+
+    }
+    console.log(i);
+    return [i, `The numbers ${dynamicArray} have a product of ${i}.`];
 
 }
 
