@@ -57,11 +57,14 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) {
-    const sum = a + b + c;
-    const mult = a * b * c;
-    const str1 = `${a} and ${b} and ${c} sum to ${sum}.`;
-    const str2 = `The product of ${a} and ${b} and ${c} is ${mult}.`;
-    return [sum, mult, str1, str2];
+    const sum1 = sum(a, b)[0];
+    const sum2 = sum(sum1, c)[0];
+    const mult1 = multiply(a, b)[0];
+    const mult2 = multiply(mult1, c)[0];
+
+    const str1 = `${a} and ${b} and ${c} sum to ${sum2}.`;
+    const str2 = `The product of ${a} and ${b} and ${c} is ${mult2}.`;
+    return [sum2, mult2, str1, str2];
 
 
 }
@@ -85,6 +88,7 @@ to use the + operator for string concatenation.
 */
 
 export function sumArrayWithThreeNumbers(sumArr) {
+    // const sumOfArr = sumArr[0] + sumArr[1], sumArr[2] ;
 
 }
 
